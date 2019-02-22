@@ -6,11 +6,17 @@ class Counter extends Component {
     imageUrl: "https://picsum.photos/200",
     tags: ["tag1", "tag2", "tag3"]
   };
+
   render() {
     return (
       <React.Fragment>
         <span className={this.getBadgeClass()}>{this.countFunc()}</span> <br />
-        <button className="btn btn-secondary btn-sm">Count</button>
+        <button
+          onClick={this.btn_increment}
+          className="btn btn-secondary btn-sm"
+        >
+          Increment
+        </button>
         <ul>
           {this.state.tags.map(tag => (
             <li key={this.state.tags.indexOf(tag)}>{tag}</li>
@@ -18,6 +24,9 @@ class Counter extends Component {
         </ul>
       </React.Fragment>
     );
+  }
+  btn_increment() {
+    alert("Dont press me idiot!");
   }
   getBadgeClass() {
     let badgeClass = "m-2 badge badge-";
