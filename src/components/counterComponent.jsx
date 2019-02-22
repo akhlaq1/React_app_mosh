@@ -19,7 +19,7 @@ class Counter extends Component {
     return (
       <React.Fragment>
         <button
-          onClick={this.btn_increment}
+          onClick={() => this.btn_increment({ id: 1 })} // call a arrow func to pass arguemnts
           className="btn btn-secondary btn-sm"
         >
           +
@@ -45,7 +45,8 @@ class Counter extends Component {
   // }
 
   // Method 2 Convert the eventhandler to Arrow Function
-  btn_increment = () => {
+  btn_increment = product_id => {
+    console.log(product_id);
     this.setState({ count: this.state.count + 1 });
   };
   btn_decrement = () => {
