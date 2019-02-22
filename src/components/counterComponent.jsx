@@ -21,13 +21,15 @@ class Counter extends Component {
   }
 
   // Method 1 to pass data
-  constructor() {
-    super();
-    this.btn_increment = this.btn_increment.bind(this);
-  }
-  btn_increment() {
+  // constructor() {
+  //   super();
+  //   this.btn_increment = this.btn_increment.bind(this);
+  // }
+
+  // Method 2 Convert the eventhandler to Arrow Function
+  btn_increment = () => {
     console.log("Button Pressed", this.state.count);
-  }
+  };
 }
 
 export default Counter;
