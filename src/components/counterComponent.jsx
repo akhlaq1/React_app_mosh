@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: this.props.value
+    count: this.props.value,
+    id: this.props.id
   };
 
   badgeColor() {
@@ -24,24 +25,27 @@ class Counter extends Component {
   render() {
     return (
       <React.Fragment>
-        <button
-          onClick={this.btn_decrement}
-          className="btn btn-secondary btn-sm"
-        >
-          -
-        </button>
+        <div>
+          <h4>Counter# {this.state.id}</h4>
+          <button
+            onClick={this.btn_decrement}
+            className="btn btn-secondary btn-sm"
+          >
+            -
+          </button>
 
-        <span className={this.badgeColor()}>
-          {" "}
-          {this.state.count === 0 ? "Zero" : this.state.count}{" "}
-        </span>
+          <span className={this.badgeColor()}>
+            {" "}
+            {this.state.count === 0 ? "Zero" : this.state.count}{" "}
+          </span>
 
-        <button
-          onClick={this.btn_increment}
-          className="btn btn-secondary btn-sm"
-        >
-          +
-        </button>
+          <button
+            onClick={this.btn_increment}
+            className="btn btn-secondary btn-sm"
+          >
+            +
+          </button>
+        </div>
       </React.Fragment>
     );
   }

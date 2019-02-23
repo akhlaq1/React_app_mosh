@@ -14,6 +14,7 @@ class Counters extends Component {
             <Counter
               value={tag.value}
               key={this.state.counters_array.indexOf(tag)}
+              id={this.state.counters_array.indexOf(tag)}
             />
           </div>
         ))}
