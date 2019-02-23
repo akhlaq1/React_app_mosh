@@ -3,7 +3,7 @@ import Counter from "./counterComponent";
 
 class Counters extends Component {
   state = {
-    counters_array: [{ value: 0 }, { value: 0 }, { value: 0 }, { value: 0 }]
+    counters_array: [{ value: 5 }, { value: 0 }, { value: 0 }, { value: 0 }]
   };
   render() {
     return (
@@ -11,7 +11,10 @@ class Counters extends Component {
         {this.state.counters_array.map(tag => (
           <div>
             {" "}
-            <Counter key={this.state.counters_array.indexOf(tag)} />
+            <Counter
+              value={tag.value}
+              key={this.state.counters_array.indexOf(tag)}
+            />
           </div>
         ))}
       </div>

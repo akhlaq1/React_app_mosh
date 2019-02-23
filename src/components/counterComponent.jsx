@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 5
+    count: this.props.value
   };
 
   badgeColor() {
