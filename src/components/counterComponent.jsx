@@ -14,25 +14,33 @@ class Counter extends Component {
     }
     return badge_color;
   }
+  disable_func() {
+    if (this.state.count === 0) {
+      return "disabled";
+    }
+    return "active";
+  }
 
   render() {
     return (
       <React.Fragment>
         <button
-          onClick={this.btn_increment}
-          className="btn btn-secondary btn-sm"
-        >
-          +
-        </button>
-        <span className={this.badgeColor()}>
-          {" "}
-          {this.state.count === 0 ? "Zero" : this.state.count}{" "}
-        </span>
-        <button
           onClick={this.btn_decrement}
           className="btn btn-secondary btn-sm"
         >
           -
+        </button>
+
+        <span className={this.badgeColor()}>
+          {" "}
+          {this.state.count === 0 ? "Zero" : this.state.count}{" "}
+        </span>
+
+        <button
+          onClick={this.btn_increment}
+          className="btn btn-secondary btn-sm"
+        >
+          +
         </button>
       </React.Fragment>
     );
@@ -50,6 +58,7 @@ class Counter extends Component {
   };
   btn_decrement = () => {
     this.setState({ count: this.state.count - 1 });
+    this.disable_func();
   };
 }
 
